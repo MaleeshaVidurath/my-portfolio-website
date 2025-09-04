@@ -1,93 +1,60 @@
 import React from 'react';
-import { CodeIcon, GlobeIcon, UsersIcon } from 'lucide-react';
-export const About = () => {
-  return <section id="about" className="py-20 bg-white dark:bg-slate-800 transition-colors">
-      <div className="container mx-auto px-4 md:px-6">
+import { CodeIcon, ServerIcon, PenToolIcon } from 'lucide-react';
+const About = () => {
+  return <section id="about" className="py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             About Me
           </h2>
-          <div className="h-1 w-20 bg-blue-600 mx-auto"></div>
+          <div className="h-1 w-24 bg-indigo-600 mx-auto"></div>
         </div>
-        <div className="flex flex-col md:flex-row gap-12 items-center">
-          <div className="md:w-1/2">
-            <p className="text-lg text-slate-700 dark:text-slate-300 mb-6">
-              I'm a passionate full-stack developer with experience in building
-              complete web applications from concept to deployment. With a
-              strong foundation in both front-end and back-end technologies, I
-              create solutions that are not only functional but also intuitive
-              and user-friendly.
-            </p>
-            <p className="text-lg text-slate-700 dark:text-slate-300 mb-6">
-              My journey in software development started 5 years ago, and since
-              then, I've worked on various projects ranging from small business
-              websites to complex enterprise applications. I'm constantly
-              learning and adapting to new technologies to stay at the forefront
-              of web development.
-            </p>
-            <p className="text-lg text-slate-700 dark:text-slate-300">
-              When I'm not coding, you can find me exploring new technologies,
-              contributing to open-source projects, or sharing knowledge with
-              the developer community.
-            </p>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <img src="https://images.unsplash.com/photo-1580927752452-89d86da3fa0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Developer working on code" className="rounded-lg shadow-xl w-full h-auto object-cover" />
           </div>
-          <div className="md:w-1/2">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-slate-50 dark:bg-slate-700 p-6 rounded-lg shadow-sm border border-slate-100 dark:border-slate-600">
-                <div className="bg-blue-100 dark:bg-blue-900/30 p-3 rounded-full w-14 h-14 flex items-center justify-center mb-4">
-                  <CodeIcon size={24} className="text-blue-600 dark:text-blue-400" />
+          <div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              Full Stack Developer based in San Francisco
+            </h3>
+            <p className="text-gray-600 mb-6">
+              I'm a passionate full stack developer with over 5 years of
+              experience building web applications. I enjoy turning complex
+              problems into simple, beautiful and intuitive designs. When I'm
+              not coding or pushing pixels, you'll find me cooking, gardening or
+              exploring the outdoors.
+            </p>
+            <p className="text-gray-600 mb-8">
+              My goal is to build products that are not only functional and
+              performant but also provide great user experiences. I'm constantly
+              learning new technologies and techniques to improve my skills.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="p-4 bg-gray-50 rounded-lg">
+                <div className="bg-indigo-100 p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                  <CodeIcon className="text-indigo-600" size={24} />
                 </div>
-                <h3 className="text-xl font-semibold mb-2 dark:text-white">
-                  Clean Code
-                </h3>
-                <p className="text-slate-600 dark:text-slate-300">
-                  I write maintainable, scalable, and well-documented code
-                  following best practices.
+                <h4 className="font-bold text-gray-900 mb-1">Frontend</h4>
+                <p className="text-gray-600 text-sm">
+                  Creating beautiful, responsive interfaces
                 </p>
               </div>
-              <div className="bg-slate-50 dark:bg-slate-700 p-6 rounded-lg shadow-sm border border-slate-100 dark:border-slate-600">
-                <div className="bg-blue-100 dark:bg-blue-900/30 p-3 rounded-full w-14 h-14 flex items-center justify-center mb-4">
-                  <UsersIcon size={24} className="text-blue-600 dark:text-blue-400" />
+              <div className="p-4 bg-gray-50 rounded-lg">
+                <div className="bg-indigo-100 p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                  <ServerIcon className="text-indigo-600" size={24} />
                 </div>
-                <h3 className="text-xl font-semibold mb-2 dark:text-white">
-                  User-Centered
-                </h3>
-                <p className="text-slate-600 dark:text-slate-300">
-                  I prioritize user experience, creating intuitive interfaces
-                  that solve real problems.
+                <h4 className="font-bold text-gray-900 mb-1">Backend</h4>
+                <p className="text-gray-600 text-sm">
+                  Building robust APIs and services
                 </p>
               </div>
-              <div className="bg-slate-50 dark:bg-slate-700 p-6 rounded-lg shadow-sm border border-slate-100 dark:border-slate-600">
-                <div className="bg-blue-100 dark:bg-blue-900/30 p-3 rounded-full w-14 h-14 flex items-center justify-center mb-4">
-                  <GlobeIcon size={24} className="text-blue-600 dark:text-blue-400" />
+              <div className="p-4 bg-gray-50 rounded-lg">
+                <div className="bg-indigo-100 p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                  <PenToolIcon className="text-indigo-600" size={24} />
                 </div>
-                <h3 className="text-xl font-semibold mb-2 dark:text-white">
-                  End-to-End
-                </h3>
-                <p className="text-slate-600 dark:text-slate-300">
-                  From database design to front-end polish, I handle all aspects
-                  of application development.
-                </p>
-              </div>
-              <div className="bg-slate-50 dark:bg-slate-700 p-6 rounded-lg shadow-sm border border-slate-100 dark:border-slate-600">
-                <div className="bg-blue-100 dark:bg-blue-900/30 p-3 rounded-full w-14 h-14 flex items-center justify-center mb-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-600 dark:text-blue-400">
-                    <path d="M12 2v4"></path>
-                    <path d="M12 18v4"></path>
-                    <path d="M4.93 4.93l2.83 2.83"></path>
-                    <path d="M16.24 16.24l2.83 2.83"></path>
-                    <path d="M2 12h4"></path>
-                    <path d="M18 12h4"></path>
-                    <path d="M4.93 19.07l2.83-2.83"></path>
-                    <path d="M16.24 7.76l2.83-2.83"></path>
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold mb-2 dark:text-white">
-                  Problem Solver
-                </h3>
-                <p className="text-slate-600 dark:text-slate-300">
-                  I enjoy tackling complex challenges and finding efficient,
-                  elegant solutions.
+                <h4 className="font-bold text-gray-900 mb-1">Design</h4>
+                <p className="text-gray-600 text-sm">
+                  Crafting user-centered experiences
                 </p>
               </div>
             </div>
@@ -96,3 +63,4 @@ export const About = () => {
       </div>
     </section>;
 };
+export default About;

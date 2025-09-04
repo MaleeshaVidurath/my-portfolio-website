@@ -1,73 +1,82 @@
-import React from 'react';
+import React, { lazy } from 'react';
 import { BriefcaseIcon, CalendarIcon } from 'lucide-react';
-export const Experience = () => {
+const Experience = () => {
   const experiences = [{
-    position: 'Senior Full Stack Developer',
-    company: 'Company Name',
-    duration: '2022 - Present',
-    description: 'Lead developer for enterprise web applications using React, Node.js, and cloud technologies.',
-    responsibilities: ['Architected and implemented scalable solutions', 'Mentored junior developers', 'Improved application performance by 40%']
+    company: 'Tech Innovations Inc.',
+    role: 'Senior Full Stack Developer',
+    duration: '2021 - Present',
+    description: "Lead development of the company's flagship SaaS product. Architect and implement new features, mentor junior developers, and collaborate with product and design teams.",
+    achievements: ['Rebuilt the frontend using React and TypeScript, improving performance by 40%', 'Implemented CI/CD pipeline reducing deployment time by 60%', 'Led migration from monolith to microservices architecture'],
+    technologies: ['React', 'Node.js', 'TypeScript', 'AWS', 'Docker']
   }, {
-    position: 'Full Stack Developer',
-    company: 'Previous Company',
-    duration: '2020 - 2022',
-    description: 'Developed and maintained multiple web applications for clients across various industries.',
-    responsibilities: ['Built responsive web applications', 'Implemented RESTful APIs', 'Integrated third-party services']
+    company: 'WebSolutions Co.',
+    role: 'Full Stack Developer',
+    duration: '2018 - 2021',
+    description: 'Developed and maintained multiple client web applications. Worked across the entire stack from database design to frontend implementation.',
+    achievements: ['Created a custom CMS that increased content team productivity by 35%', 'Optimized database queries resulting in 50% faster page load times', 'Built RESTful APIs consumed by web and mobile applications'],
+    technologies: ['JavaScript', 'React', 'Express', 'MongoDB', 'Redis']
   }, {
-    position: 'Junior Developer',
-    company: 'First Company',
-    duration: '2019 - 2020',
-    description: 'Started career as a junior developer working on frontend development tasks.',
-    responsibilities: ['Developed UI components', 'Fixed bugs and improved features', 'Collaborated with senior developers']
+    company: 'Digital Creations',
+    role: 'Frontend Developer',
+    duration: '2016 - 2018',
+    description: 'Focused on creating responsive, accessible, and performant user interfaces for various client websites and web applications.',
+    achievements: ['Implemented responsive designs for 15+ client websites', 'Reduced bundle size by 30% through code splitting and lazy loading', 'Developed reusable component library used across multiple projects'],
+    technologies: ['HTML/CSS', 'JavaScript', 'React', 'SASS', 'Webpack']
   }];
-  return <section id="experience" className="py-20 bg-slate-50 dark:bg-slate-900 transition-colors">
-      <div className="container mx-auto px-4 md:px-6">
+  return <section id="experience" className="py-20 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
-            Experience
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Work Experience
           </h2>
-          <div className="h-1 w-20 bg-blue-600 mx-auto"></div>
+          <div className="h-1 w-24 bg-indigo-600 mx-auto"></div>
+          <p className="mt-6 text-xl text-gray-600 max-w-3xl mx-auto">
+            My professional journey and the companies I've worked with
+          </p>
         </div>
-        <div className="max-w-4xl mx-auto">
-          <div className="space-y-8">
-            {experiences.map((exp, index) => <div key={index} className="relative pl-8 md:pl-0 group">
-                <div className="flex flex-col md:flex-row gap-6">
-                  <div className="md:w-1/3 flex items-center md:justify-end">
-                    <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400">
-                      <CalendarIcon size={18} />
-                      <span>{exp.duration}</span>
+        <div className="relative">
+          {/* Timeline line */}
+          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gray-200"></div>
+          {experiences.map((exp, index) => <div key={index} className={`mb-12 md:mb-0 relative ${index % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12 md:text-left'}`}>
+              {/* Timeline dot */}
+              <div className="hidden md:block absolute top-6 left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-indigo-600 border-4 border-white"></div>
+              <div className={`md:w-1/2 ${index % 2 === 0 ? 'md:float-left' : 'md:float-right'} mb-8`}>
+                <div className="bg-white p-6 rounded-lg shadow-md">
+                  <div className="flex items-center justify-between mb-4">
+                    <h3 className="text-xl font-bold text-gray-900">
+                      {exp.role}
+                    </h3>
+                    <div className="flex items-center text-gray-500 text-sm">
+                      <CalendarIcon size={16} className="mr-1" />
+                      {exp.duration}
                     </div>
                   </div>
-                  <div className="md:w-2/3 relative">
-                    <div className="absolute -left-11 md:-left-9 top-3 w-6 h-6 bg-blue-100 dark:bg-blue-900/30 rounded-full border-4 border-blue-600 dark:border-blue-500"></div>
-                    <div className="absolute -left-9 md:-left-7 top-9 bottom-0 w-0.5 bg-blue-600 dark:bg-blue-500"></div>
-                    <div className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-sm border border-slate-100 dark:border-slate-600">
-                      <div className="flex items-start gap-3 mb-2">
-                        <BriefcaseIcon size={24} className="text-blue-600 dark:text-blue-400 mt-1" />
-                        <div>
-                          <h3 className="text-xl font-bold text-slate-900 dark:text-white">
-                            {exp.position}
-                          </h3>
-                          <p className="text-blue-600 dark:text-blue-400 font-medium">
-                            {exp.company}
-                          </p>
-                        </div>
-                      </div>
-                      <p className="text-slate-600 dark:text-slate-300 mb-4">
-                        {exp.description}
-                      </p>
-                      <ul className="space-y-2">
-                        {exp.responsibilities.map((responsibility, i) => <li key={i} className="flex items-start gap-2 text-slate-600 dark:text-slate-300">
-                            <span className="mt-2 w-1.5 h-1.5 bg-blue-600 dark:bg-blue-400 rounded-full"></span>
-                            {responsibility}
-                          </li>)}
-                      </ul>
-                    </div>
+                  <div className="flex items-center mb-4">
+                    <BriefcaseIcon size={18} className="text-indigo-600 mr-2" />
+                    <span className="font-medium text-indigo-600">
+                      {exp.company}
+                    </span>
+                  </div>
+                  <p className="text-gray-600 mb-4">{exp.description}</p>
+                  <h4 className="font-semibold text-gray-900 mb-2">
+                    Key Achievements:
+                  </h4>
+                  <ul className="list-disc list-inside text-gray-600 mb-4">
+                    {exp.achievements.map((achievement, i) => <li key={i} className="mb-1">
+                        {achievement}
+                      </li>)}
+                  </ul>
+                  <div className="flex flex-wrap gap-2">
+                    {exp.technologies.map((tech, i) => <span key={i} className="px-2 py-1 bg-gray-100 text-gray-700 text-xs font-medium rounded">
+                        {tech}
+                      </span>)}
                   </div>
                 </div>
-              </div>)}
-          </div>
+              </div>
+              <div className="clear-both"></div>
+            </div>)}
         </div>
       </div>
     </section>;
 };
+export default Experience;
